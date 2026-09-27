@@ -1,0 +1,2299 @@
+/* ===========================================================
+   OUR STORY
+   CSS PART 1
+===========================================================*/
+
+/* Google Fonts
+Playfair Display
+Cormorant Garamond
+Allura
+Caveat
+DM Sans
+*/
+
+/* ===========================================================
+ROOT
+===========================================================*/
+
+:root{
+
+    --bg:#231814;
+    --paper:#f5ecdf;
+    --paper2:#efe1d2;
+    --cream:#f7f2eb;
+
+    --brown:#594233;
+    --brown2:#7b604c;
+
+    --gold:#c2a37d;
+
+    --text:#2b1f18;
+    --white:#ffffff;
+
+    --shadow:0 20px 60px rgba(0,0,0,.22);
+
+}
+
+/* ===========================================================
+RESET
+===========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    overflow-x:hidden;
+
+    background:var(--paper);
+
+    color:var(--text);
+
+    font-family:"DM Sans",sans-serif;
+
+}
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+}
+
+.hidden{
+
+    display:none !important;
+
+}
+
+/* ===========================================================
+TYPOGRAPHY
+===========================================================*/
+
+h1,h2,h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-weight:500;
+
+}
+
+.handwritten{
+
+    font-family:"Caveat",cursive;
+
+}
+
+.signature span{
+
+    font-family:"Allura",cursive;
+
+    font-size:38px;
+
+}
+
+blockquote{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-style:italic;
+
+}
+
+/* ===========================================================
+LANDING
+===========================================================*/
+
+.landing{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+.landing-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.landing-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(36,24,18,.20);
+
+}
+
+.landing-content{
+
+    position:relative;
+
+    z-index:5;
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+/* ===========================================================
+ENVELOPE
+===========================================================*/
+
+.envelope-wrapper{
+
+    position:relative;
+
+    width:min(420px,82vw);
+
+}
+
+.envelope{
+
+    width:100%;
+
+    transition:all .8s cubic-bezier(.2,.8,.2,1);
+
+    filter:drop-shadow(0 30px 45px rgba(0,0,0,.25));
+
+}
+
+.opened{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:0;
+
+    transform:translateY(40px) scale(.96);
+
+    pointer-events:none;
+
+}
+
+/* animation states */
+
+.envelope-wrapper.open .closed{
+
+    opacity:0;
+
+    transform:
+        translateY(-40px)
+        scale(.92)
+        rotate(-2deg);
+
+}
+
+.envelope-wrapper.open .opened{
+
+    opacity:1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+/* ===========================================================
+LANDING TEXT
+===========================================================*/
+
+.landing-text{
+
+    margin-top:35px;
+
+    text-align:center;
+
+    color:#fff;
+
+}
+
+.handwritten{
+
+    font-family:"Caveat",cursive;
+
+    font-size:34px;
+
+    margin-bottom:18px;
+
+    letter-spacing:.02em;
+
+    color:white;
+
+}
+
+.landing-text h1{
+
+    font-size:clamp(50px,9vw,88px);
+
+    line-height:.92;
+
+    margin-bottom:18px;
+
+    color:white;
+
+}
+
+.instruction{
+
+    letter-spacing:.28em;
+
+    text-transform:uppercase;
+
+    font-size:11px;
+
+    opacity:.95;
+
+}
+
+/* ===========================================================
+FLOATING PARTICLES
+===========================================================*/
+
+.floating-particles{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.floating-particles span{
+
+    position:absolute;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.45);
+
+    animation:float 8s linear infinite;
+
+}
+
+.floating-particles span:nth-child(1){
+
+    left:20%;
+    top:80%;
+
+}
+
+.floating-particles span:nth-child(2){
+
+    left:50%;
+    top:60%;
+
+    animation-delay:2s;
+
+}
+
+.floating-particles span:nth-child(3){
+
+    left:70%;
+    top:90%;
+
+    animation-delay:3s;
+
+}
+
+.floating-particles span:nth-child(4){
+
+    left:80%;
+    top:40%;
+
+    animation-delay:5s;
+
+}
+
+.floating-particles span:nth-child(5){
+
+    left:35%;
+    top:20%;
+
+    animation-delay:1.5s;
+
+}
+
+/* ===========================================================
+LETTER
+===========================================================*/
+
+.letter{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s ease;
+    margin-bottom: 80px;
+
+}
+.letter.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+.letter-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.letter-overlay{
+
+    position:relative;
+
+    z-index:5;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px 24px;
+
+}
+
+.letter-card{
+
+    width:min(650px,100%);
+
+    text-align:center;
+
+}
+
+.archive{
+
+    letter-spacing:.35em;
+
+    font-size:11px;
+
+    text-transform:uppercase;
+
+    color:var(--white);
+
+    margin-top:8px;
+
+}
+
+.letter-card h2{
+
+    font-size:clamp(52px,9vw,88px);
+
+    line-height:.88;
+
+    color:var(--brown);
+
+}
+
+.letter-card h2 span{
+
+    display:block;
+
+    font-style:italic;
+
+    color:#8c6d54;
+
+}
+
+.divider{
+
+    width:90px;
+
+    height:1px;
+
+    background:#b89979;
+
+    margin:34px auto;
+
+}
+
+.story-intro{
+
+    font-size:15px;
+
+    line-height:1.95;
+
+    max-width:470px;
+
+    margin:0 auto;
+
+    color:#5d4736;
+
+}
+
+.signature{
+
+    margin-top:38px;
+
+    margin-bottom:36px;
+
+    font-size:18px;
+
+}
+
+/* ===========================================================
+BUTTON
+===========================================================*/
+
+.begin-button{
+
+    padding:16px 34px;
+
+    border-radius:100px;
+
+    background:#4b3528;
+
+    color:white;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    font-size:11px;
+
+    transition:.35s;
+
+}
+
+.begin-button:hover{
+
+    transform:translateY(-4px);
+
+    background:#6b4c39;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+}
+
+/* ===========================================================
+ANIMATIONS
+===========================================================*/
+
+@keyframes float{
+
+    0%{
+
+        transform:
+        translateY(0);
+
+        opacity:.1;
+
+    }
+
+    50%{
+
+        opacity:.6;
+
+    }
+
+    100%{
+
+        transform:
+        translateY(-120px);
+
+        opacity:0;
+
+    }
+
+}
+
+@media(max-width:520px){
+
+    .envelope-wrapper{
+
+        width:min(340px,82vw);
+
+    }
+
+    .landing-text{
+
+        margin-top:24px;
+
+    }
+
+    .landing-text h1{
+
+        font-size:54px;
+
+    }
+
+    .handwritten{
+
+        font-size:27px;
+
+    }
+
+    .instruction{
+
+        font-size:9px;
+
+        letter-spacing:.22em;
+
+    }
+
+}
+
+@media(max-width:700px){
+
+    .chapter{
+
+        padding:70px 5%;
+
+    }
+
+    .paper{
+
+        padding:28px 22px;
+
+        border-radius:14px;
+
+    }
+
+}
+
+/* ===========================================================
+CSS PART 2
+HERO + CHAPTERS + FRIENDSHIP
+===========================================================*/
+
+/* ===========================================================
+MAIN
+===========================================================*/
+
+#story{
+    width:100%;
+    overflow:hidden;
+}
+
+/* ===========================================================
+HERO
+===========================================================*/
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    height:100svh;
+
+    min-height:650px;
+
+    overflow:hidden;
+
+}
+
+
+.hero-background{
+
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transform:scale(1.08);
+
+}
+
+
+
+.hero-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(25,15,10,.15),
+        rgba(25,15,10,.65)
+    );
+
+}
+
+.story-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin: 20px 0;
+}
+
+.story-title span {
+  display: block;
+}
+
+.story-title span:last-child {
+  font-size: 2.35rem;
+  font-style: italic;
+}
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    width:min(900px,90%);
+
+    margin:auto;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.hero-year{
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+
+    font-size:12px;
+
+    margin-bottom:18px;
+
+    opacity:.9;
+
+}
+
+.hero-content h2{
+
+    font-size:clamp(70px,11vw,130px);
+
+    line-height:.82;
+
+    margin-bottom:26px;
+
+}
+
+.hero-content h2 span{
+
+    display:block;
+
+    font-style:italic;
+
+    color:#e8d5c0;
+
+}
+
+.hero-text{
+
+    max-width:560px;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#f5ede7;
+
+}
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    letter-spacing:.35em;
+
+    font-size:11px;
+
+    animation:scrollBounce 2s infinite;
+
+}
+
+@keyframes scrollBounce{
+
+    0%,100%{
+
+        transform:
+        translateX(-50%)
+        translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        translateY(10px);
+
+    }
+
+}
+
+/* ===========================================================
+CHAPTERS
+===========================================================*/
+
+.chapter{
+
+    padding:120px 8%;
+
+    background:
+
+    url("images/bg2.jpg")
+    center/cover;
+
+}
+
+.paper{
+
+    background:rgba(248,241,233,.94);
+
+    border-radius:20px;
+
+    padding:70px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.paper.reverse{
+
+    background:rgba(252,247,241,.96);
+
+}
+
+.chapter-label{
+
+    display:inline-block;
+
+    letter-spacing:.30em;
+
+    font-size:11px;
+
+    color:#96785e;
+
+    margin-bottom:40px;
+
+}
+
+.chapter-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.image-wrap{
+
+    position:relative;
+
+}
+
+.image-wrap img{
+
+    border-radius:14px;
+
+    box-shadow:0 25px 55px rgba(0,0,0,.18);
+
+}
+
+.photo-note{
+
+    position:absolute;
+
+    bottom:-20px;
+
+    left:25px;
+
+    background:white;
+
+    padding:12px 20px;
+
+    border-radius:30px;
+
+    font-family:"Caveat",cursive;
+
+    font-size:26px;
+
+    transform:rotate(-4deg);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+.chapter-content small{
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+    color:#9a7d67;
+
+}
+
+.chapter-content h2{
+
+    font-size:clamp(56px,8vw,90px);
+
+    margin:18px 0;
+
+    color:#4a3528;
+
+}
+
+.chapter-content p{
+
+    font-size:18px;
+
+    line-height:2;
+
+    color:#60493a;
+
+}
+
+.chapter-content blockquote{
+
+    margin-top:35px;
+
+    font-size:34px;
+
+    color:#8b6b56;
+
+}
+
+/* ===========================================================
+FRIENDSHIP
+===========================================================*/
+
+.friendship{
+
+    background:#f5ecdf;
+
+    padding:130px 7%;
+
+}
+
+.meeting-heading{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.meeting-heading span{
+
+    letter-spacing:.25em;
+
+    text-transform:uppercase;
+
+    font-size:11px;
+
+    color:#987a64;
+
+}
+
+.meeting-heading h2{
+
+    font-size:clamp(64px,9vw,110px);
+
+    margin:18px 0;
+
+    color:#4a3528;
+
+}
+
+.meeting-heading p{
+
+    font-size:19px;
+
+    color:#6b5343;
+
+}
+
+.photo-wall{
+
+    position:relative;
+
+    width:min(1100px,100%);
+
+    height:820px;
+
+    margin:auto;
+
+}
+
+.wall-photo{
+
+    position:absolute;
+
+    width:260px;
+
+    background:white;
+
+    padding:12px 12px 40px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.16);
+
+    transition:.4s;
+
+}
+
+.wall-photo:hover{
+
+    transform:scale(1.04);
+
+    z-index:10;
+
+}
+
+.wall-photo img{
+
+    aspect-ratio:4/5;
+
+    object-fit:cover;
+
+}
+
+.wall-photo figcaption{
+
+    margin-top:14px;
+
+    text-align:center;
+
+    font-family:"Caveat",cursive;
+
+    font-size:26px;
+
+    color:#6b4d3d;
+
+}
+
+.one{
+
+    left:0;
+    top:60px;
+
+    transform:rotate(-8deg);
+
+}
+
+.two{
+
+    right:30px;
+    top:0;
+
+    transform:rotate(7deg);
+
+}
+
+.three{
+
+    left:140px;
+    bottom:0;
+
+    transform:rotate(4deg);
+
+}
+
+.four{
+
+    right:0;
+    bottom:40px;
+
+    transform:rotate(-6deg);
+
+}
+
+.meeting-ending{
+
+    margin-top:90px;
+
+    max-width:720px;
+
+    margin-inline:auto;
+
+    text-align:center;
+
+}
+
+.meeting-ending p{
+
+    font-size:21px;
+
+    line-height:2.1;
+
+    color:#5c4738;
+
+}
+
+/* ===========================================================
+FILM DIVIDER
+===========================================================*/
+
+.film-divider{
+
+    background:#f5ecdf;
+
+    padding:40px 0 100px;
+
+}
+
+.film-divider img{
+
+    width:min(950px,92%);
+
+    margin:auto;
+
+    border-radius:14px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ===========================================================
+CSS PART 3
+GROWING • LONG DISTANCE • MEMORY BOX • TIMELINE
+===========================================================*/
+
+
+/* ===========================================================
+GROWING TOGETHER
+===========================================================*/
+
+.growing{
+
+    background:#faf5ef;
+
+    padding:140px 8%;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.growing-left h2{
+
+    font-size:clamp(60px,8vw,100px);
+
+    line-height:.85;
+
+    color:#4a3427;
+
+    margin:20px 0 35px;
+
+}
+
+.growing .intro{
+
+    font-size:18px;
+
+    line-height:2;
+
+    color:#60493a;
+
+    margin-bottom:40px;
+
+}
+
+.memory-list{
+
+    display:grid;
+
+    gap:18px;
+
+}
+
+.memory-list div{
+
+    background:white;
+
+    padding:18px 24px;
+
+    border-radius:50px;
+
+    width:fit-content;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    color:#5b4435;
+
+    font-size:15px;
+
+}
+
+.hand-note{
+
+    margin-top:45px;
+
+    font-family:"Caveat",cursive;
+
+    font-size:34px;
+
+    color:#97795f;
+
+    transform:rotate(-2deg);
+
+}
+
+.editorial-frame{
+
+    padding:20px;
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:0 30px 70px rgba(0,0,0,.18);
+
+    transform:rotate(3deg);
+
+}
+
+.editorial-frame img{
+
+    border-radius:10px;
+
+}
+
+
+
+/* ===========================================================
+LONG DISTANCE
+===========================================================*/
+
+.distance{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:150px 8%;
+
+    color:white;
+
+}
+
+.distance-paper{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.distance-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(28,18,14,.72);
+
+    backdrop-filter:blur(2px);
+
+}
+
+.distance-content{
+
+    position:relative;
+
+    z-index:5;
+
+    width:min(950px,100%);
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.distance-content span{
+
+    letter-spacing:.28em;
+
+    text-transform:uppercase;
+
+    font-size:12px;
+
+    color:#d8b896;
+
+}
+
+.distance-content h2{
+
+    font-size:clamp(70px,10vw,120px);
+
+    line-height:.82;
+
+    margin:24px 0 60px;
+
+}
+
+.distance-photo{
+
+    width:min(650px,100%);
+
+    margin:auto;
+
+    padding:16px;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+}
+
+.distance-photo img{
+
+    border-radius:12px;
+
+}
+
+.distance-stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:60px;
+
+    margin:70px 0;
+
+    flex-wrap:wrap;
+
+}
+
+.distance-stats div{
+
+    width:140px;
+
+}
+
+.distance-stats h3{
+
+    font-size:64px;
+
+    color:#d7b18a;
+
+}
+
+.distance-stats p{
+
+    margin-top:8px;
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+    font-size:11px;
+
+}
+
+.distance blockquote{
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:40px;
+
+    line-height:1.4;
+
+    color:#f6efe8;
+
+}
+
+
+
+/* ===========================================================
+MEMORY BOX
+===========================================================*/
+
+.memory-box{
+
+    background:#f8efe5;
+
+    padding:150px 8%;
+
+}
+
+.memory-heading{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.memory-heading span{
+
+    letter-spacing:.25em;
+
+    text-transform:uppercase;
+
+    font-size:12px;
+
+    color:#8d7058;
+
+}
+
+.memory-heading h2{
+
+    margin-top:20px;
+
+    font-size:clamp(60px,9vw,105px);
+
+    line-height:.82;
+
+    color:#4b3628;
+
+}
+
+.memory-image{
+
+    width:min(750px,100%);
+
+    margin:0 auto 80px;
+
+    padding:18px;
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.16);
+
+}
+
+.memory-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:26px;
+
+}
+
+.memory-card{
+
+    background:white;
+
+    padding:34px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    font-family:"Caveat",cursive;
+
+    font-size:30px;
+
+    color:#654d3c;
+
+}
+
+.memory-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+/* ===========================================================
+TIMELINE
+===========================================================*/
+
+.timeline{
+
+    background:#fffaf5;
+
+    padding:150px 8%;
+
+}
+
+.timeline>span{
+
+    display:block;
+
+    text-align:center;
+
+    letter-spacing:.28em;
+
+    text-transform:uppercase;
+
+    font-size:11px;
+
+    color:#92755d;
+
+}
+
+.timeline>h2{
+
+    text-align:center;
+
+    font-size:clamp(60px,8vw,100px);
+
+    color:#4b3528;
+
+    margin:25px 0 80px;
+
+}
+
+.timeline-line{
+
+    width:min(700px,100%);
+
+    margin:auto;
+
+    position:relative;
+
+}
+
+.timeline-line::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:28px;
+
+    top:0;
+
+    bottom:0;
+
+    width:2px;
+
+    background:#ccb29a;
+
+}
+
+.event{
+
+    position:relative;
+
+    padding-left:90px;
+
+    margin-bottom:55px;
+
+}
+
+.event::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#7d5e47;
+
+    left:20px;
+
+    top:12px;
+
+}
+
+.event span{
+
+    display:block;
+
+    font-size:13px;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    color:#8b6d57;
+
+    margin-bottom:8px;
+
+}
+
+.event h4{
+
+    font-size:34px;
+
+    font-family:"Playfair Display",serif;
+
+    color:#4b3528;
+
+    font-weight:500;
+
+}
+
+.event.active::before{
+
+    background:#c9a57c;
+
+    transform:scale(1.4);
+
+}
+
+.event.active h4{
+
+    color:#9a6f47;
+
+}
+/* ===========================================================
+CSS PART 4
+ENGAGEMENT • INVITATION • FINAL • RESPONSIVE
+===========================================================*/
+
+
+/* ===========================================================
+ENGAGEMENT
+===========================================================*/
+
+.engagement{
+
+    background:#f6ede3;
+
+    padding:150px 8%;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:90px;
+
+    align-items:center;
+
+}
+
+.engagement-photo{
+
+    background:white;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.18);
+
+    transform:rotate(-2deg);
+
+}
+
+.engagement-photo img{
+
+    border-radius:12px;
+
+}
+
+.engagement-content span{
+
+    letter-spacing:.28em;
+
+    text-transform:uppercase;
+
+    font-size:11px;
+
+    color:#9b7c63;
+    
+    margin-bottom: 22px;
+
+}
+
+.engagement-content h2{
+
+    font-size:58px;
+
+    margin:18px 0 10px;
+
+    color:#604434;
+
+}
+
+.engagement-content h3{
+
+    font-size:clamp(70px,8vw,105px);
+
+    line-height:.82;
+
+    margin-bottom:30px;
+
+    color:#412d22;
+
+}
+
+.engagement-content p{
+
+    font-size:18px;
+
+    line-height:2;
+
+    color:#624b3c;
+
+}
+
+.official-stamp{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    border:3px solid #b8936d;
+
+    display:grid;
+
+    place-items:center;
+
+    margin-top:40px;
+
+    transform:rotate(-12deg);
+
+    color:#b8936d;
+
+    letter-spacing:.18em;
+
+}
+
+
+
+/* ===========================================================
+INVITATION
+===========================================================*/
+
+.invitation{
+
+    position:relative;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+}
+
+.invite-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.invite-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(255,255,255,.12);
+
+}
+
+.invite-content{
+
+    position:relative;
+
+    z-index:5;
+
+    width:min(800px,92%);
+
+    margin:auto;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.invite-content h2{
+
+    font-size:clamp(64px,8vw,110px);
+
+    line-height:.84;
+
+    color:#483327;
+
+    margin:35px 0;
+
+}
+
+.invite-details{
+
+    width:100%;
+
+    margin-top:60px;
+
+}
+
+.detail{
+
+    padding:28px;
+
+    border-top:1px solid rgba(70,50,40,.18);
+
+}
+
+.detail:last-child{
+
+    border-bottom:1px solid rgba(70,50,40,.18);
+
+}
+
+.detail small{
+
+    display:block;
+
+    letter-spacing:.25em;
+
+    text-transform:uppercase;
+
+    color:#8d6d56;
+
+    margin-bottom:14px;
+
+}
+
+.detail h3{
+
+    font-size:30px;
+
+    color:#553d2f;
+
+}
+
+.invite-button{
+
+    margin-top:55px;
+
+    padding:18px 42px;
+
+    border-radius:100px;
+
+    background:#4f3729;
+
+    color:white;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    transition:.35s;
+
+}
+
+.invite-button:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+
+/* ===========================================================
+FINAL
+===========================================================*/
+
+.final{
+
+    position:relative;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+}
+
+.final-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.final-dark{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(26,18,13,.55);
+
+}
+
+.final-content{
+
+    position:relative;
+
+    z-index:5;
+
+    width:min(900px,90%);
+
+    margin:auto;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.thanks{
+
+    font-family:"Caveat",cursive;
+
+    font-size:42px;
+
+    color:#eddcc9;
+
+}
+
+.final-content h2{
+
+    margin:40px 0;
+
+    font-size:clamp(75px,10vw,150px);
+
+    line-height:.82;
+
+}
+
+.final-content h2 span{
+
+    display:block;
+
+    color:#d6b08c;
+
+    font-style:italic;
+
+}
+
+.date{
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+
+    font-size:13px;
+
+}
+
+.quote{
+
+    margin-top:45px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:42px;
+
+    line-height:1.5;
+
+    color:#f5e8da;
+
+}
+
+.rsvp-button{
+
+    margin-top:55px;
+
+    padding:18px 46px;
+
+    border-radius:100px;
+
+    background:white;
+
+    color:#4d3528;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.rsvp-button:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.footer{
+
+    position:absolute;
+
+    bottom:30px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    color:white;
+
+    letter-spacing:.25em;
+
+    text-transform:uppercase;
+
+    font-size:11px;
+
+    z-index:5;
+
+}
+
+
+
+/* ===========================================================
+FADE ANIMATION
+===========================================================*/
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:1s ease;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+/* ===========================================================
+RESPONSIVE
+===========================================================*/
+
+@media(max-width:600px){
+
+.chapter-grid,
+
+.growing,
+
+.engagement{
+
+grid-template-columns:1fr;
+
+gap:60px;
+
+}
+
+.paper{
+
+padding:40px;
+
+}
+
+.photo-wall{
+
+height:auto;
+
+display:grid;
+
+grid-template-columns:1fr;
+
+gap:35px;
+
+}
+
+.wall-photo{
+
+position:relative;
+
+left:auto;
+
+right:auto;
+
+top:auto;
+
+bottom:auto;
+
+transform:none !important;
+
+width:min(320px,90%);
+}
+
+.distance-stats{
+
+gap:30px;
+
+}
+
+}
+
+
+
+@media(max-width:700px){
+
+.hero{
+
+min-height:650px;
+
+}
+
+.hero-content h2{
+
+font-size:62px;
+
+}
+
+.chapter-content h2{
+
+font-size:52px;
+
+}
+
+.meeting-heading h2{
+
+font-size:58px;
+
+}
+
+.growing-left h2{
+
+font-size:58px;
+
+}
+
+.timeline>h2{
+
+font-size:58px;
+
+}
+
+.invite-content h2{
+
+font-size:58px;
+
+}
+
+.final-content h2{
+
+font-size:68px;
+
+}
+
+.memory-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.distance blockquote{
+
+font-size:30px;
+
+}
+
+}
+
+
+
+@media(max-width:520px){
+
+
+
+
+.photo-note{
+
+font-size:22px;
+
+left:10px;
+
+}
+
+.chapter-content p{
+
+font-size:16px;
+
+}
+
+.story-intro{
+
+font-size:16px;
+
+}
+
+.memory-card{
+
+font-size:24px;
+
+padding:24px;
+
+}
+
+.footer{
+
+flex-direction:column;
+
+gap:8px;
+
+}
+
+}
+
+.landing-content{
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.landing-content.opened-state{
+    opacity:0;
+    transform:translateY(-20px) scale(.98);
+}

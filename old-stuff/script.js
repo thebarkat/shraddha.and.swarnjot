@@ -216,8 +216,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
             ".hero-content > *",
             ".chapter",
-            ".timeline-intro > *",
-            ".story-event",
+            ".meeting-heading",
+            ".wall-photo",
+            ".meeting-ending",
+            ".film-divider",
+            ".growing-left > *",
+            ".editorial-frame",
+            ".distance-content > *",
+            ".memory-heading",
+            ".memory-image",
+            ".memory-card",
+            ".timeline > *",
+            ".event",
+            ".engagement-photo",
+            ".engagement-content > *",
             ".invite-content > *",
             ".final-content > *"
 
@@ -464,26 +476,26 @@ document.addEventListener("DOMContentLoaded", () => {
             */
 
             const eventTitle =
-                "Shradhha Bhatia & Swarnjot Singh — Engagement";
+                "Bride & Groom — Wedding";
 
             const eventDate =
-                "20261023";
+                "20261212";
 
             const startTime =
-                "200000";
+                "190000";
 
             /*
              Wedding duration: 3 hours.
             */
 
             const endTime =
-                "235900";
+                "220000";
 
             const venue =
-                "Rudra Banquet";
+                "The Grand Ballroom";
 
             const description =
-                "Engagement celebration of Shradhha Bhatia & Swarnjot Singh.";
+                "Wedding celebration of Bride & Groom.";
 
 
             const icsContent =
@@ -521,7 +533,7 @@ END:VCALENDAR`;
             link.href = url;
 
             link.download =
-                "shradhha-swarnjot-engagement.ics";
+                "wedding-save-the-date.ics";
 
             document.body.appendChild(link);
 
