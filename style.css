@@ -110,7 +110,7 @@ h1,h2,h3{
 
     font-family:"Allura",cursive;
 
-    font-size:38px;
+    font-size:33px;
 
 }
 
@@ -693,21 +693,20 @@ HERO
 
 .story-title {
   font-family: "Cormorant Garamond", serif;
-  font-size: 2.2rem;
+  font-size: 2;
   font-weight: 500;
   line-height: 1.15;
   text-align: center;
-  letter-spacing: 0.02em;
-  margin: 20px 0;
+  margin: 20px 60px;
 }
+
+
 
 .story-title span {
-  display: block;
-}
-
-.story-title span:last-child {
-  font-size: 2.35rem;
+  font-size: 1.6rem;
   font-style: italic;
+  
+  
 }
 
 
@@ -717,11 +716,11 @@ HERO
 
     z-index:5;
 
-    width:min(900px,90%);
+    width:min(800px,80%);
 
     margin:auto;
 
-    height:100%;
+    height:90%;
 
     display:flex;
 
@@ -2265,7 +2264,7 @@ font-size:16px;
 
 .story-intro{
 
-font-size:16px;
+font-size:15px;
 
 }
 
@@ -2330,4 +2329,190 @@ gap:8px;
  .story-dot{left:18px;top:28px;transform:translate(-50%,0)}.story-event-final .story-dot{transform:translate(-50%,0) scale(1.2)}
  .story-copy{padding:0}.timeline-photo{width:min(300px,100%);margin:10px auto 0}.tilt-left,.tilt-right{transform:rotate(0)}
  .invite-content h2{font-size:52px}.invite-subtitle{font-size:24px}
+}
+/* ===========================================================
+   FAMILY INTRO
+=========================================================== */
+
+.family-intro {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 120px 24px;
+
+    background:
+        linear-gradient(
+            rgba(250, 245, 239, 0.94),
+            rgba(245, 236, 223, 0.97)
+        ),
+        url("images/bg2.jpg") center/cover;
+
+    text-align: center;
+}
+
+.family-intro-content {
+    width: min(760px, 100%);
+    margin: auto;
+}
+
+
+/* SMALL FORMAL TEXT */
+
+.family-small {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 11px;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+
+    color: #96785e;
+
+    margin-bottom: 24px;
+}
+
+
+/* FAMILY NAMES */
+
+.family-intro h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(38px, 6vw, 58px);
+    font-weight: 500;
+    line-height: 1.15;
+
+    color: #4a3528;
+
+    margin-bottom: 14px;
+}
+
+.family-intro h2 span {
+    display: block;
+
+    font-family: "Allura", cursive;
+    font-size: 42px;
+    font-weight: 400;
+
+    color: #b08b68;
+
+    margin: 4px 0;
+}
+
+
+/* GRANDPARENTS / INVITATION TEXT */
+
+.family-relation {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+    line-height: 1.7;
+    font-style: italic;
+
+    color: #7b604c;
+}
+
+
+/* LITTLE DIVIDER */
+
+.family-divider {
+    margin: 50px auto;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+
+    color: #c2a37d;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.family-divider::before,
+.family-divider::after {
+    content: "";
+
+    width: 70px;
+    height: 1px;
+
+    background: #c2a37d;
+}
+
+
+/* BRIDE REVEAL */
+
+.bride-name {
+    font-family: "Allura", cursive;
+
+    font-size: clamp(65px, 10vw, 105px);
+    font-weight: 400;
+    line-height: 1;
+
+    color: #594233;
+
+    margin-top: 35px;
+}
+
+
+/* SUBTLE SCROLL ANIMATION — works with your existing JS */
+
+.family-intro-content {
+    animation: familyFade 1.1s ease both;
+}
+
+@keyframes familyFade {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .family-intro {
+        min-height: auto;
+        padding: 90px 22px;
+    }
+
+    .family-intro h2 {
+        font-size: 38px;
+    }
+
+    .family-intro h2 span {
+        font-size: 34px;
+    }
+
+    .family-relation {
+        font-size: 18px;
+    }
+
+    .family-divider {
+        margin: 38px auto;
+    }
+
+    .family-divider::before,
+    .family-divider::after {
+        width: 45px;
+    }
+
+    .bride-name {
+        font-size: 68px;
+    }
+
+    .family-small {
+        font-size: 9px;
+        letter-spacing: .25em;
+    }
 }
