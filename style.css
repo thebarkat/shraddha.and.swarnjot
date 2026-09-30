@@ -2315,6 +2315,9 @@ gap:8px;
 .timeline-photo{background:white;padding:13px 13px 48px;box-shadow:0 22px 55px rgba(0,0,0,.15);max-width:340px;margin:auto;}
 .timeline-photo img{aspect-ratio:4/5;object-fit:cover;}
 .timeline-photo figcaption{text-align:center;margin-top:14px;font-family:"Caveat",cursive;font-size:25px;color:#6b4d3d;}
+.timeline-photo1{background:white;padding:13px 13px 48px;box-shadow:0 22px 55px rgba(0,0,0,.15);max-width:340px;margin:auto;}
+.timeline-photo1 img{aspect-ratio:4/5;object-fit:fill;}
+.timeline-photo1 figcaption{text-align:center;margin-top:14px;font-family:"Caveat",cursive;font-size:25px;color:#6b4d3d;}
 .tilt-left{transform:rotate(-3deg)} .tilt-right{transform:rotate(3deg)}
 .story-event-final .story-dot{background:#c9a57c;transform:translate(-50%,-50%) scale(1.25);}
 .invite-kicker{margin-bottom:20px;}
